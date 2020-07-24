@@ -1,0 +1,18 @@
+- hosts: webservers
+  tasks:
+    - name: Install apt packages
+      become: true
+      become_user: root
+      apt:
+        name:
+          - software-properties-common
+          - apt-transport-https
+          - zip
+          - wget
+          - make
+          - git
+          - code
+          - vim
+          - vlc
+        state: present
+        update_cache: true
